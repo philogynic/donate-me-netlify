@@ -18,6 +18,10 @@ exports.handler = async (event, context, callback) => {
     //         return statusResponse
     //     })
 
+    console.log('event: ',event)
+    console.log('context: ', context)
+    console.log('callback: ', callback)
+
     return {
         statusCode: 200,
         body: JSON.stringify({'transactionToken': 'hello'})
