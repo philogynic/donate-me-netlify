@@ -18,7 +18,7 @@ exports.handler = async (event, context, callback) => {
     //         return statusResponse
     //     })
 
-    notificationJson = await event.json()
+    const notificationJson = event.body
 
     console.log('event: ',notificationJson)
     // console.log('context: ', context)
