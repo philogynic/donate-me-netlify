@@ -11,6 +11,11 @@ const App = () => {
     const res_json = await res.json()
     console.log(res_json)
     setMsg(res_json.msg)
+
+    const transactionToken = await fetch('/.netlify/functions/createSnapTransaction')
+    const transactionToken_json = await transactionToken.json()
+    console.log(transactionToken_json.transactionToken)
+    window.snap.pay(transactionToken_json.transactionToken)
   }
 
   return (
