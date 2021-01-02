@@ -19,7 +19,8 @@ exports.handler = async (event, context, callback) => {
         })
 
     return {
-        statusCode: 200,
-        body: JSON.stringify({'transactionToken': statusResponse})
+        statusCode: 200
+        // ,
+        // body: JSON.stringify({'transactionToken': statusResponse})
     }
 }
