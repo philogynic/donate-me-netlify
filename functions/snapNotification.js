@@ -18,9 +18,11 @@ exports.handler = async (event, context, callback) => {
     //         return statusResponse
     //     })
 
-    console.log('event: ',event)
-    console.log('context: ', context)
-    console.log('callback: ', callback)
+    notificationJson = await event.json()
+
+    console.log('event: ',notificationJson)
+    // console.log('context: ', context)
+    // console.log('callback: ', callback)
 
     return {
         statusCode: 200,
