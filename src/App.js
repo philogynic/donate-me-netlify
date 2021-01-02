@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import  {useState} from 'react'
 import './App.css';
 
-function App() {
+const App = () => {
+  
+  const [msg, setMsg] = useState()
+
+  const handleClick = async () => {
+    console.log('clicked')
+    const res = await fetch('/.netlify/functions/helloWorld')
+    const res_json = await res.json()
+    console.log(res_json)
+    setMsg(res_json.msg)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>donate me</h1>
+      <h1>
+        <button onClick={handleClick}>click me</button>
+      </h1>
+      <p>{msg}</p>
     </div>
   );
 }
